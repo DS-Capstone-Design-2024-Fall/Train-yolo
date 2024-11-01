@@ -1,0 +1,9 @@
+# full path : {dataset_dir}/path
+path: "street-facilities-2" # yolo settings - dataset download path(=dataset_dir parameter) config
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: braille-block-defect
+  1: sidewalk-block-defect
+  2: bicycle-road-defect
