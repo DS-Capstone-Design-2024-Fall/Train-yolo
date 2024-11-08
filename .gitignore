@@ -2,4 +2,5 @@
 datasets
 train/logs
 train/runs
+train/datasets
 yolo*

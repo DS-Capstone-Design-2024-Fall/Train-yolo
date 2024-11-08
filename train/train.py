@@ -8,5 +8,5 @@ model.info()
 
 path = "../street-facilities.yaml"
 results = model.train(
-    data=path, epochs=100, imgsz=640, device=[0]  # use one cuda device
+    data=path, epochs=300, imgsz=640, device=[0]  # use one cuda device
 )
