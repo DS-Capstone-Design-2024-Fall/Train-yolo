@@ -6,15 +6,7 @@ settings.update()
 
 # Load a COCO-pretrained YOLOv5n model
 # model = YOLO("yolov8n.pt")
-model = YOLO("./v8n-pretraining-result/weights/best.pt")
-
-# Display model information (optional)
-model.info()
+model = YOLO("../train/v8n-pretraining-result/weights/best.pt")
 
 path = "../street-facilities.yaml"
-results = model.train(
-    data=path,
-    epochs=100,
-    imgsz=640,
-    device=[0],  # use one cuda device
-)
+results = model.val(data=path)

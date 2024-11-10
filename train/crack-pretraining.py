@@ -5,13 +5,12 @@ settings["datasets_dir"] = "/data/fehs0611/datasets/"
 settings.update()
 
 # Load a COCO-pretrained YOLOv5n model
-# model = YOLO("yolov8n.pt")
-model = YOLO("./v8n-pretraining-result/weights/best.pt")
+model = YOLO("yolov8n.pt")
 
 # Display model information (optional)
 model.info()
 
-path = "../street-facilities.yaml"
+path = "../crack-pretraining.yaml"
 results = model.train(
     data=path,
     epochs=100,

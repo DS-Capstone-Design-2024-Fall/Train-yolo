@@ -3,4 +3,5 @@ datasets
 train/logs
 train/runs
 train/datasets
+train/v8n*
 yolo*
