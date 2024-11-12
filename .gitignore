@@ -3,7 +3,6 @@ datasets
 train/logs
 train/runs
 train/datasets
-train/v8n*
 test/logs
 test/runs
 yolo*

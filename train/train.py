@@ -11,7 +11,6 @@ model = YOLO("yolov8n.pt")
 # Display model information (optional)
 # model.info()
 
-#  SGD(lr=0.01, momentum=0.9)
 path = "../street-facilities.yaml"
 results = model.train(
     data=path,

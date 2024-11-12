@@ -20,4 +20,4 @@ names:
 # scale: 0.5 # +- gain
 # translate: 0.1 # +- fraction
 
-# cos_lr = True
+cos_lr: True
