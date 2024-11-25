@@ -2,7 +2,7 @@
 datasets
 train/logs
 train/runs
-train/datasets
 test/logs
 test/runs
+test/prediction*
 yolo*
