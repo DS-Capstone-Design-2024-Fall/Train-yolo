@@ -20,7 +20,8 @@ model = YOLO("yolov8m.pt")
 path = "../street-facilities.yaml"
 results = model.train(
     data=path,
-    epochs=300,
+    epochs=400,
     imgsz=640,
+    hyp="best_hyperparameters.yaml",
     device=[0],  # use one cuda device
 )

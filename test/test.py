@@ -1,7 +1,7 @@
 from ultralytics import YOLO, settings
 import pandas as pd
+import numpy as np
 
-# yolo settings datasets_dir='/data/fehs0611/datasets/'
 settings["datasets_dir"] = "/data/fehs0611/datasets"
 settings.update()
 
@@ -16,19 +16,27 @@ results = model.val(
     # save_hybrid=True,  # 라벨 + 예측값 -> 미구현된 기능인지 True/False 똑같음 (https://github.com/ultralytics/ultralytics/issues/11698
 )
 
-# test 결과 성능
-# map5095 = results.box.map
-# map50 = results.box.map50
-# map75 = results.box.map75
+#   0: braille-block-defect
+#   1: sidewalk-block-defect
+#   2: bicycle-road-defect
+matrix = np.array(
+    [
+        results.mean_results(),
+        results.class_result(0),
+        results.class_result(1),
+        results.class_result(2),
+    ]
+)
 
-# data = {"mAP@0.5:0.95": [map5095], "mAP@0.5": [map50], "mAP@0.75": [map75]}
+df = pd.DataFrame(
+    matrix,
+    columns=["Precision(B)", "Recall(B)", "mAP50(B)", "mAP50-95"],
+    index=[
+        "All",
+        "Braille-block-defect",
+        "Sidewalk-block-defect",
+        "Bicycle-road-defect",
+    ],
+)
 
-# # Create a DataFrame
-# df = pd.DataFrame(data)
-
-# # Save the DataFrame to a CSV file
-# df.to_csv("map_results.csv", index=False)
-
-print(results.box.maps)
-
-# df = pd.DataFrame(results.box.maps)
+df.to_csv("result.csv", index=True, encoding="utf-8")
