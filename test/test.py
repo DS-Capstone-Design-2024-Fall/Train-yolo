@@ -6,7 +6,8 @@ settings["datasets_dir"] = "/data/fehs0611/datasets"
 settings.update()
 
 # Load a pre-trained YOLO model
-model = YOLO("../train/v8m-result-ds3-balanced/weights/best.pt")
+# model = YOLO("../train/v8m-result-ds3-balanced/weights/best.pt")
+model = YOLO("../train/v8m-result-4/weights/best.pt")
 
 path = "test.yaml"
 results = model.val(

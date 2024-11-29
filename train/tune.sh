@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#SBATCH -J yolo-train
+#SBATCH -J v8m-tune
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-gpu=8
 #SBATCH --mem-per-gpu=30G

@@ -1,17 +1,11 @@
 # full path : {dataset_dir}/path
-path: street-facilities-3 # yolo settings - dataset download path(=dataset_dir parameter) config
+# yolo settings - dataset download path(=dataset_dir parameter) config
+path: street-facilities-4
 train: images/train
 val: images/val
 test: images/test
-# names:
-# 0: crack
+
 names:
   0: braille-block-defect
   1: sidewalk-block-defect
   2: bicycle-road-defect
-# Hyperparameters
-# Augmentation
-# https://docs.ultralytics.com/usage/cfg/#augmentation-settings
-# degrees: 90.0 # +-
-# scale: 0.5 # +- gain
-# translate: 0.1 # +- fraction
