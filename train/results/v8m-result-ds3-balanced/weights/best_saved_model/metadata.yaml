@@ -1,0 +1,16 @@
+description: Ultralytics best model trained on ../street-facilities.yaml
+author: Ultralytics
+date: '2024-11-18T20:14:24.472873'
+version: 8.3.13
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: braille-block-defect
+  1: sidewalk-block-defect
+  2: bicycle-road-defect

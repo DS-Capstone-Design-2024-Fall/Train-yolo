@@ -1,7 +1,8 @@
 .vscode
 datasets
 dataset-sync
-train/results
+# test/results
+# train/results
 train/logs
 train/runs
 test/logs
