@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-#SBATCH -J yolov8m
+#SBATCH -J yolo
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-gpu=8
 #SBATCH --mem-per-gpu=30G

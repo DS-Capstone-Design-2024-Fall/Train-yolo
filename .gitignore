@@ -1,5 +1,6 @@
 .vscode
 datasets
+train/results
 train/logs
 train/runs
 test/logs

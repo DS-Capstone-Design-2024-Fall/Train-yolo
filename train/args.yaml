@@ -25,7 +25,7 @@ optimizer: AdamW # (str) optimizer to use, choices=[SGD, Adam, Adamax, AdamW, NA
 verbose: True # (bool) whether to print verbose output
 seed: 0 # (int) random seed for reproducibility
 deterministic: True # (bool) whether to enable deterministic mode
-single_cls: False # (bool) train multi-class data as single-class
+single_cls: True # (bool) train multi-class data as single-class
 rect: False # (bool) rectangular training if mode='train' or rectangular validation if mode='val'
 cos_lr: True # (bool) use cosine learning rate scheduler # False
 close_mosaic: 10 # (int) disable mosaic augmentation for final epochs (0 to disable)
@@ -76,19 +76,19 @@ show_boxes: True # (bool) show prediction boxes
 line_width: # (int, optional) line width of the bounding boxes. Scaled to image size if None.
 
 # Export settings ------------------------------------------------------------------------------------------------------
-format: torchscript # (str) format to export to, choices at https://docs.ultralytics.com/modes/export/#export-formats
-keras: False # (bool) use Kera=s
-optimize: False # (bool) TorchScript: optimize for mobile
-int8: False # (bool) CoreML/TF INT8 quantization
-dynamic: False # (bool) ONNX/TF/TensorRT: dynamic axes
-simplify: True # (bool) ONNX: simplify model using `onnxslim`
-opset: # (int, optional) ONNX: opset version
-workspace: None # (float, optional) TensorRT: workspace size (GiB), `None` will let TensorRT auto-allocate memory
-nms: False # (bool) CoreML: add NMS
+# format: torchscript # (str) format to export to, choices at https://docs.ultralytics.com/modes/export/#export-formats
+# keras: False # (bool) use Kera=s
+# optimize: False # (bool) TorchScript: optimize for mobile
+# int8: False # (bool) CoreML/TF INT8 quantization
+# dynamic: False # (bool) ONNX/TF/TensorRT: dynamic axes
+# simplify: True # (bool) ONNX: simplify model using `onnxslim`
+# opset: # (int, optional) ONNX: opset version
+# workspace: None # (float, optional) TensorRT: workspace size (GiB), `None` will let TensorRT auto-allocate memory
+# nms: False # (bool) CoreML: add NMS
 
 # Hyperparameters ------------------------------------------------------------------------------------------------------
-lr0: 0.01 # (float) initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
-lrf: 0.01 # (float) final learning rate (lr0 * lrf)
+lr0: 0.015 # (float) initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+lrf: 0.001 # (float) final learning rate (lr0 * lrf)
 momentum: 0.937 # (float) SGD momentum/Adam beta1
 weight_decay: 0.0005 # (float) optimizer weight decay 5e-4
 warmup_epochs: 3.0 # (float) warmup epochs (fractions ok)
