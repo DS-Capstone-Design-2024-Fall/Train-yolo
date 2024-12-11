@@ -56,9 +56,18 @@ https://github.com/DS-Capstone-Design-2024-Fall/Application
   실험 2의 test set 에 대한 결과(최종보고서 그림19)에서는 각각 0.70, 0.50 정도로 크게 향상되었다.  
 
   다양한 형태 및 색상을 가지는 객체일수록 데이터 증강이 모델 예측 성능 개선에 크게 영향을 주었다.  
-  클래스별로 성능 차이가 심하게 나는 문제는 오버샘플링을 통해 어느정도 완화할 수 있음을 확인하였다.  
+  클래스별로 성능 차이가 심하게 나는 문제는 오버샘플링을 통해 어느정도 완화할 수 있음을 확인하였다.
+
+  ![image](https://github.com/user-attachments/assets/4f944244-2882-49be-8519-c8c934ce12d1)
+  test/results/v11m-result-5-db-plus1000 결과 요약
+  train/results/v11m-result-5-db-plus1000 의 실험으로 학습된 모델  
+  (train/results/v11m-result-5-db-plus1000/weights/best.pt) 로 테스트한 결과 
+
+  ![3_12_1_1_2_2_20210815_0000207580-2](https://github.com/user-attachments/assets/37cbf0cf-3df3-4985-b4b3-1f980e0e80f6)
+  예측 및 정답 비교 (dataset_v3)
+
   
-- Future work : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용  
+- Future work : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용
 
 
 # 추가 : 데이터셋 버전
@@ -85,6 +94,8 @@ street-facilities : 전처리 완료
 <version 4.>
  baseline 1-a 에서 확률적으로 원본 유지, 90도 회전, 플립, 랜덤크롭 후(각각 1/4확률) dataset 분할하여 저장
 
-<version 5.>
- baseline 1-a 에서 확률적으로 원본유지, 90/180/270도 회전 후(각각 1/4 확률) dataset 분할하여 저장
+<version 5.>  
+ baseline 1-a 에서 확률적으로 원본유지, 90/180/270도 회전 후(각각 1/4 확률) dataset 분할하여 저장  
 
+<version 5 - db>  
+ 방식은 동일하되 그냥 version 5.a 보다 데이터양이 2배 많게 조정  
