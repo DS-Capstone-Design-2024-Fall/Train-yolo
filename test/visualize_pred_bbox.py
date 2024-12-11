@@ -5,7 +5,8 @@ import gc
 from pathlib import Path
 
 # Load a pre-trained YOLO model
-model = YOLO("../train/v8m-result-ds3-balanced/weights/best.pt")
+# model = YOLO("../train/v8m-result-ds3-balanced/weights/best.pt")
+model = YOLO("../train/results/v11m-result-5-tuned-db-1000/weights/best.pt")
 
 
 # GPU server environment
@@ -13,7 +14,8 @@ model = YOLO("../train/v8m-result-ds3-balanced/weights/best.pt")
 settings["datasets_dir"] = "/data/fehs0611/datasets"
 settings.update()
 dataset_dir = settings["datasets_dir"]
-path = f"{dataset_dir}/street-facilities-3/images/test"
+# path = f"{dataset_dir}/street-facilities-3/images/test"
+path = f"{dataset_dir}/street-facilities-5-db/images/test"
 
 # Local PC enviroment
 # path = f"D:/Downloads/street-facilities-3/images/test"
@@ -26,7 +28,7 @@ os.makedirs(dpath, exist_ok=True)
 
 # os 에서 open files 갯수 제한이 있으므로 제한 갯수 내의 파일을 한 묶음으로 처리
 # ulimit -a
-batch_size = 512
+batch_size = 32
 for i in range(0, len(images) + batch_size, batch_size):
     end = min(i + batch_size, len(images))
     batch = images[i:end]

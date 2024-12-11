@@ -34,7 +34,8 @@ def visualize_bbox(
 settings["datasets_dir"] = "/data/fehs0611/datasets"
 settings.update()
 datasets_dir = settings["datasets_dir"]
-label_dir = f"{datasets_dir}/street-facilities-3/labels/test"
+# label_dir = f"{datasets_dir}/street-facilities-3/labels/test"
+label_dir = f"{datasets_dir}/street-facilities-5-db/labels/test"
 
 # Local PC environment
 # label_dir = f"D:/Downloads/street-facilities-3/labels/test"

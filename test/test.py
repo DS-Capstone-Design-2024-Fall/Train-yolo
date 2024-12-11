@@ -6,8 +6,12 @@ settings["datasets_dir"] = "/data/fehs0611/datasets"
 settings.update()
 
 # Load a pre-trained YOLO model
-# model = YOLO("../train/v8m-result-ds3-balanced/weights/best.pt")
-model = YOLO("../train/v8m-result-4/weights/best.pt")
+# model = YOLO("../train/runs/detect/train242/weights/best.pt")
+# model = YOLO("../train/results/v8m-result-ds3-balanced/weights/best.pt")
+# model = YOLO("../train/results/v8m-result-4/weights/best.pt")
+# model = YOLO("../train/results/v11m-result-5-tuned/weights/best.pt")
+# model = YOLO("../train/results/v11m-result-5-tuned-db/weights/best.pt")
+model = YOLO("../train/results/v11m-result-5-tuned-db-1000/weights/best.pt")
 
 path = "test.yaml"
 results = model.val(
@@ -31,9 +35,9 @@ matrix = np.array(
 
 df = pd.DataFrame(
     matrix,
-    columns=["Precision(B)", "Recall(B)", "mAP50(B)", "mAP50-95"],
+    columns=["Precision(B)", "Recall(B)", "AP50(B)", "AP50-95"],
     index=[
-        "All",
+        "All (mean)",
         "Braille-block-defect",
         "Sidewalk-block-defect",
         "Bicycle-road-defect",

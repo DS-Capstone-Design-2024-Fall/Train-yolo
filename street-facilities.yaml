@@ -1,5 +1,6 @@
 # full path : {dataset_dir}/path
 path: street-facilities-5-db # yolo settings - dataset download path(=dataset_dir parameter) config
+# path: street-facilities-3
 train: images/train
 val: images/val
 test: images/test
