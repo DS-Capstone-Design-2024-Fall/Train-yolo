@@ -8,17 +8,17 @@
   애플리케이션 : https://github.com/DS-Capstone-Design-2024-Fall/Application/blob/master/README.md  
 
 # Code instruction
-Train-yolo/  
-├── preprocessing/  
-├── test/  
-|   ├── results  
-├── train/  
-|   ├── results  
-├── .gitignore  
-├── README.md  
-├── crack-pretraining.yaml  
-├── image_labeling.py  
-└── street-facilities.yaml  
+Train-yolo/
+├── preprocessing/          # 데이터 전처리를 위한 디렉토리  
+├── test/                   # 모델 테스트 관련 디렉토리  
+│   ├── results/            # 테스트 결과를 저장하는 디렉토리  
+├── train/                  # 모델 학습 관련 디렉토리  
+│   ├── results/            # 학습 결과를 저장하는 디렉토리  
+├── .gitignore              # Git 무시 파일 설정  
+├── README.md               # 프로젝트 설명 문서  
+├── crack-pretraining.yaml  # 균열 탐지 사전 학습 설정 파일  
+├── image_labeling.py       # 이미지 라벨링 관련 스크립트  
+└── street-facilities.yaml  # 도로 시설물 설정 파일  
 
 crack-pretraining.yaml  
 Pre training 에 필요한, 모델 입력 데이터셋에 대한 메타데이터 정보  
