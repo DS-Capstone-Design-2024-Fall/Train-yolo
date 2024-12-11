@@ -37,8 +37,11 @@ Train 폴더
 1. 모델 train 실행 관련 python 파일 및 쉘 스크립트  
 2. 모델 튜닝 관련 python 파일 및 쉘 스크립트  
 3. Pre-training 관련 python 파일 및 쉘 스크립트 (여러 실험 중 하나였으나 의미있는 결과는 X)  
-4. 학습 결과 : 하위 디렉토리 results  
-
+4. 학습 결과 : 하위 디렉토리 results.  
+     사용 데이터셋 : https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=513 . AI-HUB 보행 안전을 위한 도로 시설물 데이터  
+     전처리, 증강 등을 적용해서 dataset 마다 버전을 나눴으며, 저작권 문제로 사용한 데이터셋까지는 업로드 되어있지 않다.  
+     results/v8m-result-4 의 경우 yolov8m 모델, 적용된 데이터셋 버전은 4 이라는 뜻이다.  
+      
 # Demo
 학습된 모델을 탑재한 (yolov8m) Flutter Aplicatoin  
 https://github.com/DS-Capstone-Design-2024-Fall/Application  
@@ -55,5 +58,33 @@ https://github.com/DS-Capstone-Design-2024-Fall/Application
   다양한 형태 및 색상을 가지는 객체일수록 데이터 증강이 모델 예측 성능 개선에 크게 영향을 주었다.  
   클래스별로 성능 차이가 심하게 나는 문제는 오버샘플링을 통해 어느정도 완화할 수 있음을 확인하였다.  
   
--Future work : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용  
- 
+- Future work : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용  
+
+
+# 추가 : 데이터셋 버전
+
+- street-facilities-raw (baseline 0)
+Ai-hub에서 받은 데이터 원본 중 사용할 데이터만 모음
+- street-facilities-selected (baseline 1-a)
+baseline 0 에서 2238 X 4032 이미지만 선택하여 360x640 으로 축소. 
+너비 360 은 원본비율을 유지한 채 축소하는 과정에서 소수점을 올림처리해서 나온 정수
+
+<version 1.> 패딩 적용
+street-facilities : 전처리 완료
+
+<version 2. (street-facilities-2)> 패딩 x
+ baseline 1-a 에서 dataset 분할하여 저장
+
+<version 2. : only0>
+싱글클래스. 실험 결과 성능에는 별 차이없음. 
+결과 분석 편의상 계속 기존 방식대로 클래스 3가지로 수행.
+
+<version 3.>
+ baseline 1-a 에서 회전으로 증강 후 dataset 분할하여 저장
+
+<version 4.>
+ baseline 1-a 에서 확률적으로 원본 유지, 90도 회전, 플립, 랜덤크롭 후(각각 1/4확률) dataset 분할하여 저장
+
+<version 5.>
+ baseline 1-a 에서 확률적으로 원본유지, 90/180/270도 회전 후(각각 1/4 확률) dataset 분할하여 저장
+
