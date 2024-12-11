@@ -8,12 +8,12 @@
   애플리케이션 : https://github.com/DS-Capstone-Design-2024-Fall/Application/blob/master/README.md  
 
 # Code instruction
-Train-yolo/
+Train-yolo/  
 ├── preprocessing/          # 데이터 전처리를 위한 디렉토리  
 ├── test/                   # 모델 테스트 관련 디렉토리  
-│   ├── results/            # 테스트 결과를 저장하는 디렉토리  
+│     ├── results/            # 테스트 결과를 저장하는 디렉토리  
 ├── train/                  # 모델 학습 관련 디렉토리  
-│   ├── results/            # 학습 결과를 저장하는 디렉토리  
+│     ├── results/            # 학습 결과를 저장하는 디렉토리  
 ├── .gitignore              # Git 무시 파일 설정  
 ├── README.md               # 프로젝트 설명 문서  
 ├── crack-pretraining.yaml  # 균열 탐지 사전 학습 설정 파일  
