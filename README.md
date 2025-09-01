@@ -9,6 +9,9 @@
   모델 학습 진행 : https://github.com/DS-Capstone-Design-2024-Fall/Train-yolo/tree/main/test  
   애플리케이션 : https://github.com/DS-Capstone-Design-2024-Fall/Application/blob/master/README.md  
 
+# 최종 보고서
+https://docs.google.com/document/d/1oWqzZ8Lzyj9g7yxoUFqUnwwkBu3X2BCG5d6s0eM3ewA/edit?tab=t.0
+
 # 파일 설명
 Train-yolo/  
 ├── preprocessing/          # 데이터 전처리를 위한 디렉토리  
