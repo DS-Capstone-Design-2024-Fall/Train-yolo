@@ -64,12 +64,13 @@ https://github.com/DS-Capstone-Design-2024-Fall/Application
   클래스별로 성능 차이가 심하게 나는 문제는 오버샘플링을 통해 어느정도 완화할 수 있음을 확인하였다.
 
   ![image](https://github.com/user-attachments/assets/4f944244-2882-49be-8519-c8c934ce12d1)
-  test/results/v11m-result-5-db-plus1000 결과 요약
-  train/results/v11m-result-5-db-plus1000 의 실험으로 학습된 모델  
-  (train/results/v11m-result-5-db-plus1000/weights/best.pt) 로 테스트한 결과 
+  test/results/v11m-result-5-db-plus1000 결과 요약.  
+  (train/results/v11m-result-5-db-plus1000/weights/best.pt)로 테스트하였다.
+  
 
-  ![3_12_1_1_2_2_20210815_0000207580-2](https://github.com/user-attachments/assets/37cbf0cf-3df3-4985-b4b3-1f980e0e80f6)
-  예측 및 정답 비교 (dataset_v3)
+  ![3_12_1_1_2_2_20210815_0000207580-2](https://github.com/user-attachments/assets/37cbf0cf-3df3-4985-b4b3-1f980e0e80f6)  
+  예측 및 정답 비교 (dataset_v3)  
+  빨간 색 박스가 정답, 파란 색 박스가 예측에 해당한다.  
 
   
 - 추후 과제 : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용
