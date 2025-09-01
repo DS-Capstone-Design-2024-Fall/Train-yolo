@@ -1,5 +1,5 @@
 # Train-yolo
-# Project Summary
+# 요약
   현행 민원 접수 서비스는 시민이 불량 시설 보수 요청 민원 등의 신고를 하면 이를 사람이 보고 판단하기 때문에 신고가 접수되고 처리되는 과정에서 지연과, 인력 소모가 발생하였다. 
   사람 대신 객체 탐지 모델을 배치하여 사람 대신 불량 시설물을 탐지하고 이후 처리도 자동화한다면 이러한 문제를 해결할 수 있을 것이다. 
   따라서 본 연구에서는 YOLO 모델을 학습시켜 국내 보행 시설의 불량을 감지할 수 있게 만들고, 해당 모델을 배치한 애플리케이션을 구현하였다.
@@ -7,7 +7,7 @@
   모델 학습 진행 : https://github.com/DS-Capstone-Design-2024-Fall/Train-yolo/tree/main/test  
   애플리케이션 : https://github.com/DS-Capstone-Design-2024-Fall/Application/blob/master/README.md  
 
-# Code instruction
+# 파일 설명
 Train-yolo/  
 ├── preprocessing/          # 데이터 전처리를 위한 디렉토리  
 ├── test/                   # 모델 테스트 관련 디렉토리  
@@ -42,14 +42,14 @@ Train 폴더
      전처리, 증강 등을 적용해서 dataset 마다 버전을 나눴으며, 저작권 문제로 사용한 데이터셋까지는 업로드 되어있지 않다.  
      results/v8m-result-4 의 경우 yolov8m 모델, 적용된 데이터셋 버전은 4 이라는 뜻이다.  
       
-# Demo
+# 데모 애플리케이션
 학습된 모델을 탑재한 (yolov8m) Flutter Aplicatoin  
 https://github.com/DS-Capstone-Design-2024-Fall/Application  
 
 ![image](https://github.com/user-attachments/assets/d27ba2eb-e924-4a72-a177-74a87965ca3d)
 
-# Conclusion and Future Work
-- Concolusion
+# 결론 및 추후 과제
+- 결론
      최종 보고서 내용의 실험 1, 2, 3 공통적으로 학습 중에 증강이 적용되었지만,  
   학습 전 데이터에 증강을 적용하기 전인 실험 1과 적용한 후인 실험 2, 3의 경우 예측 성능에 꽤 큰 차이가 존재한다.  
   실험 1의 학습중 Validation set 에 대한 결과(최종보고서 그림 14)에서 mAP50 은 대략 0.30, mAP50-95 는 대략 0.15의 수치였으나,  
@@ -67,10 +67,10 @@ https://github.com/DS-Capstone-Design-2024-Fall/Application
   예측 및 정답 비교 (dataset_v3)
 
   
-- Future work : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용
+- 추후 과제 : 학습 데이터셋은 AI-HUB 의 데이터였으나, 실제로 촬영한 데이터를 섞어서 학습과 테스트에 적용
 
 
-# 추가 : 데이터셋 버전
+# 사용 데이터셋 설명
 
 - street-facilities-raw (baseline 0)
 Ai-hub에서 받은 데이터 원본 중 사용할 데이터만 모음
