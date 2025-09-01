@@ -22,26 +22,26 @@ Train-yolo/
 ├── image_labeling.py       # 이미지 라벨링 관련 스크립트  
 └── street-facilities.yaml  # 도로 시설물 설정 파일  
 
-crack-pretraining.yaml  
+**crack-pretraining.yaml**  
 Pre training 에 필요한, 모델 입력 데이터셋에 대한 메타데이터 정보  
 
-street-facilities.yaml  
+**street-facilities.yaml**  
 모델 학습에 필요한, 모델 입력 데이터셋에 대한 메타데이터 정보  
 
-Preprocessing 폴더  
+**Preprocessing 폴더**  
 데이터 전처리에 관한 코드 모음  
 
-Test 폴더
+**Test 폴더**  
 1. 모델 test 실행 python 파일 및 쉘 스크립트 (경희대학교 Seraph GPU 에서 실행하기 위한 용도) 파일  
 2. 테스트 결과 : 하위 디렉토리 results  
 
-Train 폴더
+**Train 폴더**  
 1. 모델 train 실행 관련 python 파일 및 쉘 스크립트  
 2. 모델 튜닝 관련 python 파일 및 쉘 스크립트  
 3. Pre-training 관련 python 파일 및 쉘 스크립트 (여러 실험 중 하나였으나 의미있는 결과는 X)  
 4. 학습 결과 : 하위 디렉토리 results.  
      사용 데이터셋 : https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=513 . AI-HUB 보행 안전을 위한 도로 시설물 데이터  
-     전처리, 증강 등을 적용해서 dataset 마다 버전을 나눴으며, 저작권 문제로 사용한 데이터셋까지는 업로드 되어있지 않다.  
+     전처리, 증강 등을 적용해서 dataset 마다 버전을 나누었다.
      results/v8m-result-4 의 경우 yolov8m 모델, 적용된 데이터셋 버전은 4 이라는 뜻이다.  
       
 # 데모 애플리케이션
@@ -74,30 +74,31 @@ https://github.com/DS-Capstone-Design-2024-Fall/Application
 
 # 사용 데이터셋 설명
 
-- street-facilities-raw (baseline 0)
-Ai-hub에서 받은 데이터 원본 중 사용할 데이터만 모음
-- street-facilities-selected (baseline 1-a)
-baseline 0 에서 2238 X 4032 이미지만 선택하여 360x640 으로 축소. 
+- street-facilities-raw  
+Ai-hub에서 받은 대용량 데이터 원본 중 사용할 데이터만 모음
+
+- street-facilities-selected (baseline)  
+**street-facilities-raw**에서 2238 X 4032 이미지만 선택하여 360x640 으로 축소. 
 너비 360 은 원본비율을 유지한 채 축소하는 과정에서 소수점을 올림처리해서 나온 정수
 
-<version 1.> 패딩 적용
+- <version 1.> 패딩 적용
 street-facilities : 전처리 완료
 
-<version 2. (street-facilities-2)> 패딩 x
+- <version 2. (street-facilities-2)> 패딩 x
  baseline 1-a 에서 dataset 분할하여 저장
 
-<version 2. : only0>
+- <version 2. : only0>
 싱글클래스. 실험 결과 성능에는 별 차이없음. 
 결과 분석 편의상 계속 기존 방식대로 클래스 3가지로 수행.
 
-<version 3.>
- baseline 1-a 에서 회전으로 증강 후 dataset 분할하여 저장
+- <version 3.>
+ baseline에서 회전으로 증강 후 dataset 분할하여 저장
 
-<version 4.>
- baseline 1-a 에서 확률적으로 원본 유지, 90도 회전, 플립, 랜덤크롭 후(각각 1/4확률) dataset 분할하여 저장
+- <version 4.>
+ baseline에서 확률적으로 원본 유지, 90도 회전, 플립, 랜덤크롭 후(각각 1/4확률) dataset 분할하여 저장
 
-<version 5.>  
- baseline 1-a 에서 확률적으로 원본유지, 90/180/270도 회전 후(각각 1/4 확률) dataset 분할하여 저장  
+- <version 5.>  
+ baseline에서 확률적으로 원본유지, 90/180/270도 회전 후(각각 1/4 확률) dataset 분할하여 저장  
 
-<version 5 - db>  
- 방식은 동일하되 그냥 version 5.a 보다 데이터양이 2배 많게 조정  
+- <version 5 - db>  
+ 방식은 동일하되 version 5.보다 데이터양이 2배 많게 조정  
